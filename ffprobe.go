@@ -28,6 +28,7 @@ func ProbeURL(ctx context.Context, fileURL string, extraFFProbeOptions ...string
 		"-print_format", "json",
 		"-show_format",
 		"-show_streams",
+		"-show_programs",
 	}, extraFFProbeOptions...)
 
 	// Add the file argument
@@ -49,6 +50,7 @@ func ProbeReader(ctx context.Context, reader io.Reader, extraFFProbeOptions ...s
 		"-print_format", "json",
 		"-show_format",
 		"-show_streams",
+		"-show_programs",
 	}, extraFFProbeOptions...)
 
 	// Add the file from stdin argument

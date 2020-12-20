@@ -20,8 +20,9 @@ const (
 
 // ProbeData is the root json data structure returned by an ffprobe.
 type ProbeData struct {
-	Streams []*Stream `json:"streams"`
-	Format  *Format   `json:"format"`
+	Programs []*Program `json:"programs"`
+	Streams  []*Stream  `json:"streams"`
+	Format   *Format    `json:"format"`
 }
 
 // Format is a json data structure to represent formats
@@ -45,6 +46,26 @@ type FormatTags struct {
 	MinorVersion     string `json:"minor_version"`
 	CompatibleBrands string `json:"compatible_brands"`
 	CreationTime     string `json:"creation_time"`
+}
+
+// Program is a json data structure to represent programs.
+// A Program can contains the program details and an array of program streams.
+type Program struct {
+	ProgramID     int         `json:"program_id"`
+	ProgramNumber int         `json:"program_num"`
+	StreamsCount  int         `json:"nb_streams"`
+	PmtPid        int         `json:"pmt_pid"`
+	PcrPid        int         `json:"pcr_pid"`
+	StartPts      int32       `json:"start_pts"`
+	StartTime     float32     `json:"start_time"`
+	Tags          *ProgramTag `json:"tags"`
+	Streams       []*Stream   `json:"streams"`
+}
+
+// ProgramTag is a json data structure to represent program-format tags
+type ProgramTag struct {
+	ServiceName     string `json:"service_name"`
+	ServiceProvider string `json:"service_provider"`
 }
 
 // Stream is a json data structure to represent streams.
