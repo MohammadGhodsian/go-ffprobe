@@ -57,7 +57,7 @@ type Program struct {
 	PmtPid        int         `json:"pmt_pid"`
 	PcrPid        int         `json:"pcr_pid"`
 	StartPts      int64       `json:"start_pts"`
-	StartTime     float64     `json:"start_time"`
+	StartTime     string      `json:"start_time"`
 	Tags          *ProgramTag `json:"tags"`
 	Streams       []*Stream   `json:"streams"`
 }
