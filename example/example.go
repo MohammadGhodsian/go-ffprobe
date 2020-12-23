@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	"gopkg.in/vansante/go-ffprobe.v2"
+	"gopkg.in/MohammadGhodsian/go-ffprobe.v2"
 )
 
 func main() {
