@@ -8,7 +8,7 @@ representing the returned ffprobe data.
 ## Installation
 
 ```
-go get gopkg.in/MohammadGhodsian/go-ffprobe.v2
+go get gopkg.in/MohammadGhodsian/go-ffprobe.v3
 ```
 
 ## Basic usage
